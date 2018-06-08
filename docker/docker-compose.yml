@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    build: ./mariadb
+    container_name: oex_db
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - 3306:3306
+volumes:
+  data:
+    driver: local

@@ -3,3 +3,4 @@ build/
 out/
 temp/
 .idea/*
+!codeStyleSettings.xml

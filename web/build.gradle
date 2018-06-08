@@ -9,6 +9,7 @@ dependencies {
     compile 'com.fasterxml.jackson.module:jackson-module-kotlin'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compile "org.jetbrains.kotlin:kotlin-reflect"
+    compile "org.mariadb.jdbc:mariadb-java-client:$rootProject.properties.mariadb_jdbc_version"
 }
 
 

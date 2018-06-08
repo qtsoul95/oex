@@ -10,6 +10,7 @@ buildscript {
         junit_jupiter_version = '5.2.0'
         jetbrains_annotations_version = '15.0'
         commons_io_version = '2.6'
+        mariadb_jdbc_version = '2.2.4'
     }
 
     repositories {
