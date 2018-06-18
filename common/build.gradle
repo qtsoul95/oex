@@ -7,5 +7,7 @@ dependencies {
     compile 'org.springframework.security:spring-security-openid'
     compile 'org.springframework.security:spring-security-config'
     compile 'org.springframework.data:spring-data-commons'
+    compile 'org.hibernate:hibernate-core:5.3.1.Final'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile "com.auth0:java-jwt:$rootProject.properties.java_jwt_version"
 }
