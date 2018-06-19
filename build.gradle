@@ -2,7 +2,7 @@ version = '0.0.1-SNAPSHOT'
 
 buildscript {
     ext {
-        kotlin_version = '1.2.50'
+        kotlin_version = '1.2.41'
         kotlinx_coroutines = '0.22.5'
         spring_boot_version = '2.0.2.RELEASE'
         jackson_version = '2.9.5'

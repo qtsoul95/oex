@@ -8,12 +8,12 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-class AppUser(
+class OexUser(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var userId: Long,
 
-    var userName: String,
+    var username: String,
 
     var password: String,
 

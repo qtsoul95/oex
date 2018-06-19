@@ -8,8 +8,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-      properties:
-        hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
 logging:
   level:
     root: WARN
