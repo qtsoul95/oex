@@ -2,15 +2,15 @@ package com.example.oex.common.domain.basic
 
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
+import org.springframework.security.crypto.password.PasswordEncoder
 import java.io.Serializable
 import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-class OexUser(
+data class OexUser(
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var userId: Long,
 
     var username: String,
@@ -24,4 +24,8 @@ class OexUser(
 
     @UpdateTimestamp
     var updatedAt: LocalDateTime
-) : Serializable
+) : Serializable {
+    fun encodePassword(passwordEncoder: PasswordEncoder){
+        password = passwordEncoder.encode(password)
+    }
+}
