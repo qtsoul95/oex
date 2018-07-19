@@ -2,8 +2,8 @@ version = '0.0.1-SNAPSHOT'
 
 buildscript {
     ext {
-        kotlin_version = '1.2.41'
-        kotlinx_coroutines = '0.22.5'
+        kotlin_version = '1.2.51'
+        kotlinx_coroutines = '0.23.4'
         spring_boot_version = '2.0.2.RELEASE'
         jackson_version = '2.9.5'
         java_jwt_version = '3.3.0'
@@ -69,7 +69,7 @@ subprojects {
             jvmTarget = '1.8'
             javaParameters = true
             allWarningsAsErrors = true
-            freeCompilerArgs = ['-Xenable-jvm-default']
+            freeCompilerArgs = ['-Xjvm-default=enable']
         }
     }
     compileTestKotlin {
@@ -77,7 +77,7 @@ subprojects {
             jvmTarget = '1.8'
             javaParameters = true
             allWarningsAsErrors = true
-            freeCompilerArgs = ['-Xenable-jvm-default']
+            freeCompilerArgs = ['-Xjvm-default=enable']
         }
     }
 
@@ -89,5 +89,5 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
+    gradleVersion = '4.8.1'
 }

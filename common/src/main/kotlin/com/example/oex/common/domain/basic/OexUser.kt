@@ -9,22 +9,24 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "users")
-data class OexUser(
-    @Id
-    var userId: Long,
-
+class OexUser(
     var username: String,
-
     var password: String,
-
-    var roleJson: String,
-
-    @CreationTimestamp
-    var createdAt: LocalDateTime,
-
-    @UpdateTimestamp
-    var updatedAt: LocalDateTime
+    @Column(name = "role_json")
+    var roleJson: String
 ) : Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val userId: Long? = null
+
+    @field:CreationTimestamp
+    @Column(name = "created_at")
+    lateinit var createdAt: LocalDateTime
+
+    @field:UpdateTimestamp
+    @Column(name = "updated_at")
+    lateinit var updatedAt: LocalDateTime
+
     fun encodePassword(passwordEncoder: PasswordEncoder){
         password = passwordEncoder.encode(password)
     }

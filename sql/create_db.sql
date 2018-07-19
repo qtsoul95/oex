@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   , `role_json` VARCHAR(1024) not null COLLATE 'ascii_bin' comment 'user role json'
   , `created_at` DATETIME default NOW() not null comment 'created time'
   , `updated_at` DATETIME default NOW() ON UPDATE NOW() not null comment 'last updated time'
-  , constraint `users_PK` primary key (`user_id`)
+  , constraint `users_PK` primary key (`username`)
 );
 
 alter table `users` add unique `users_IX1` (`username`) ;

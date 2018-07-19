@@ -26,11 +26,11 @@ class LoginApiController(
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     fun handleHttpMessageNotReadableException() = ResultRes(false, "required")
 
+    @ExceptionHandler(UsernameNotFoundException::class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    fun handleUsernameNotFoundException() = ResultRes(false, "authentication failure, username not found")
+
     @ExceptionHandler(Exception::class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     fun handleException() = ResultRes(false, "authentication failure")
-
-    @ExceptionHandler(UsernameNotFoundException::class)
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    fun handleUsernameNotFoundException() = ResultRes(false, "authentication failure")
 }

@@ -7,12 +7,14 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserDetailsServiceImpl(
     private val oexUserDaoImpl: OexUserDaoImpl,
     private val objectMapper: ObjectMapper
 ) : UserDetailsService {
+    @Transactional
     override fun loadUserByUsername(username: String?): LoginUser {
         val user = username?.let {
             oexUserDaoImpl.findUserByUsername(username)

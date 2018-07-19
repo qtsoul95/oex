@@ -30,7 +30,7 @@ class WebSecurityConfig(
     override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers(
             "/api/v1/**",
-            "/sample/**"
+            "/migrate/**"
         )
     }
 
